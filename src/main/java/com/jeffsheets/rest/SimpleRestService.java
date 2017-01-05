@@ -1,6 +1,6 @@
 package com.jeffsheets.rest;
 
-import org.apache.commons.lang.exception.ExceptionUtils;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpStatusCodeException;
@@ -19,7 +19,7 @@ public class SimpleRestService {
         } catch (HttpStatusCodeException e) {
             result = "Get FAILED with HttpStatusCode: " + e.getStatusCode() + "|" + e.getStatusText();
         } catch (RuntimeException e) {
-            result = "Get FAILED\n" + ExceptionUtils.getFullStackTrace(e);
+            result = "Get FAILED\n" + ExceptionUtils.getStackTrace(e);
         }
         return result;
     }
